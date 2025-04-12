@@ -101,6 +101,19 @@ return { -- Autocompletion
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
       },
+      window = {
+        completion = {
+          max_width = 60,
+          border = 'rounded', -- 'single', 'double', 'rounded', etc.
+          scrollbar = true, -- Show scrollbar if items exceed height
+          col_offset = -4, -- Adjust horizontal offset
+          side_padding = 1, -- Padding left/right of items
+        },
+        documentation = {
+          max_width = 80,
+          border = 'rounded',
+        },
+      },
       sources = {
         {
           name = 'lazydev',

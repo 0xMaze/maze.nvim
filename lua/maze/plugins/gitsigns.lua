@@ -57,5 +57,14 @@ return {
         map('n', '<leader>tD', gitsigns.preview_hunk_inline, { desc = '[T]oggle git show [D]eleted' })
       end,
     },
+    signs = {
+      add = { text = '' }, -- No symbol
+      change = { text = '' }, -- No symbol
+      delete = { text = '' }, -- No symbol
+      topdelete = { text = '' }, -- No symbol
+      changedelete = { text = '' }, -- No symbol
+    },
+    signcolumn = false, -- Disable the sign column entirely
+    numhl = true, -- Enable line number highlighting instead
   },
 }

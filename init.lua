@@ -11,7 +11,6 @@ vim.g.have_nerd_font = true
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
-
 -- For Lua config
 vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter', 'CursorHold', 'CursorHoldI' }, {
   pattern = '*',
@@ -91,8 +90,19 @@ vim.opt.scrolloff = 10
 vim.opt.confirm = true
 
 -- [[ Basic Keymaps ]]
---  See `:help vim.keymap.set()`
+--  See `:help vim.keymapset()`
 
+-- Scroll HALF a page UP (like <C-u> normally does) and center the cursor on screen
+vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll half-page up and center screen' })
+
+-- Scroll HALF a page DOWN (like <C-d> normally does) and center the cursor on screen
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll half-page down and center screen' })
+
+-- Scroll a FULL page UP (like <C-b> normally does) and center the cursor on screen
+vim.keymap.set('n', '<C-b>', '<C-b>zz', { desc = 'Page up (full page) and center screen' })
+
+-- Scroll a FULL page DOWN (like <C-f> normally does) and center the cursor on screen
+vim.keymap.set('n', '<C-f>', '<C-f>zz', { desc = 'Page down (full page) and center screen' })
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
@@ -100,6 +110,8 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
+-- Toggle floating diagnostic window
+vim.keymap.set('n', '<leader>td', vim.diagnostic.open_float, { desc = '[T]oggle floating [D]iagnostic window' })
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.

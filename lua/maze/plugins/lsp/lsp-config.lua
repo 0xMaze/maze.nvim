@@ -157,10 +157,10 @@ return {
       underline = { severity = vim.diagnostic.severity.ERROR },
       signs = vim.g.have_nerd_font and {
         text = {
-          [vim.diagnostic.severity.ERROR] = '󰅚 ',
-          [vim.diagnostic.severity.WARN] = '󰀪 ',
-          [vim.diagnostic.severity.INFO] = '󰋽 ',
-          [vim.diagnostic.severity.HINT] = '󰌶 ',
+          [vim.diagnostic.severity.ERROR] = ' ',
+          [vim.diagnostic.severity.WARN] = ' ',
+          [vim.diagnostic.severity.INFO] = ' ',
+          [vim.diagnostic.severity.HINT] = ' ',
         },
       } or {},
       virtual_text = {
@@ -176,6 +176,7 @@ return {
           return diagnostic_message[diagnostic.severity]
         end,
       },
+      virtual_lines = { current_line = true },
     }
 
     -- LSP servers and clients are able to communicate to each other what features they support.
